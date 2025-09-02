@@ -45,7 +45,7 @@ export const readConfig = (): Config => {
  */
 const getConfigFilePath = (): string => {
     const homeDir = os.homedir();
-    const configPath = path.join(homeDir, 'github.com', 'blogaggregator', '.gatorconfig.json')
+    const configPath = path.join(homeDir, '.gatorconfig.json')
     return configPath
 }
 
