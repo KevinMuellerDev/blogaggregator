@@ -1,6 +1,7 @@
 import { create } from "domain";
 import { setUser } from "../config";
-import { createUser, getUser } from "src/lib/db/queries/users";
+import { createUser, deleteUsers, getUser } from "src/lib/db/queries/users";
+import { error } from "console";
 
 export async function handlerLogin(cmdName: string, ...args: string[]) {
     if (args.length !== 1) {
@@ -35,4 +36,13 @@ export async function handlerRegister(cmdName: string, ...args: string[]) {
     console.log(`User ${userName} was created.`)
     console.log(createdUser);
 
+}
+
+export async function handlerReset(cmdName: string) {
+    try {
+        const result = await deleteUsers();
+        console.log('Table users has been reset.')
+    } catch (err) {
+        throw new Error('Reset of users table was not successful');
+    }
 }
