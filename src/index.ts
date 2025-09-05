@@ -3,6 +3,7 @@ import {
     registerCommand,
     runCommand,
 } from "./commands/commands";
+import { fetchFeed } from "./commands/rss";
 import { handlerLogin, handlerRegister, handlerReset, handlerUsers } from "./commands/users";
 
 async function main() {
@@ -21,6 +22,7 @@ async function main() {
     await registerCommand(commandsRegistry, "reset", handlerReset);
     await registerCommand(commandsRegistry, "register", handlerRegister);
     await registerCommand(commandsRegistry, "login", handlerLogin);
+    await registerCommand(commandsRegistry, "rss", fetchFeed);
 
     try {
         await runCommand(commandsRegistry, cmdName, ...cmdArgs);
