@@ -1,3 +1,4 @@
+import { User } from "src/lib/db/schema";
 import { readConfig, setUser } from "../config";
 import { createUser, deleteUsers, getUser, getUsers } from "src/lib/db/queries/users";
 
