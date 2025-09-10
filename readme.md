@@ -2,6 +2,8 @@
 
 ## Overview
 
+gator gator gator
+
 **Gator** is a command-line tool for managing users and RSS feeds in a blog aggregator application.
 
 ## Installation
@@ -12,6 +14,24 @@ Clone the repository and install dependencies:
 git clone https://github.com/yourusername/blogaggregator.git
 cd blogaggregator
 npm install
+```
+
+## Configuration
+
+Create a config file at `./config.json`:
+
+```json
+{
+  "dbPath": "./gator.db",
+  "defaultUser": "alice"
+}
+```
+
+Or via environment variables:
+
+```bash
+export GATOR_DB=./gator.db
+export GATOR_DEFAULT_USER=alice
 ```
 
 ## Usage
